@@ -17,10 +17,9 @@
 # Foreign Keys
 #
 #  fk_rails_...  (holding_id => holdings.id)
+#  fk_rails_...  (sftp_configuration_id => sftp_configurations.id)
 #
 class EbicsSftpConfiguration < ApplicationRecord
-  belongs_to :holding, inverse_of: :ebics_sftp_configuration
+  belongs_to :holding
   belongs_to :sftp_configuration
-
-  validates :holding, presence: true
 end

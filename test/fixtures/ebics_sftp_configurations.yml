@@ -17,12 +17,15 @@
 # Foreign Keys
 #
 #  fk_rails_...  (holding_id => holdings.id)
+#  fk_rails_...  (sftp_configuration_id => sftp_configurations.id)
 #
 
 one:
   name: MyString
   holding: one
+  sftp_configuration: one
 
 two:
   name: MyString
   holding: two
+  sftp_configuration: two

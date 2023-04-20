@@ -17,6 +17,7 @@
 # Foreign Keys
 #
 #  fk_rails_...  (holding_id => holdings.id)
+#  fk_rails_...  (sftp_configuration_id => sftp_configurations.id)
 #
 require "test_helper"
 

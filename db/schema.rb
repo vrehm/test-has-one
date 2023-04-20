@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_20_193033) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_210708) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ebics_sftp_configurations", force: :cascade do |t|
     t.string "name"
     t.bigint "holding_id", null: false
+    t.bigint "sftp_configuration_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "sftp_configuration_id", null: false
     t.index ["holding_id"], name: "index_ebics_sftp_configurations_on_holding_id"
     t.index ["sftp_configuration_id"], name: "index_ebics_sftp_configurations_on_sftp_configuration_id"
   end
@@ -37,4 +37,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_193033) do
   end
 
   add_foreign_key "ebics_sftp_configurations", "holdings"
+  add_foreign_key "ebics_sftp_configurations", "sftp_configurations"
 end

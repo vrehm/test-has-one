@@ -8,6 +8,6 @@
 #  updated_at :datetime         not null
 #
 class SftpConfiguration < ApplicationRecord
-  has_many :ebics_sftp_configurations, dependent: :destroy
+  has_many :ebics_sftp_configurations, dependent: :destroy, inverse_of: :sftp_configuration
   has_many :holdings, through: :ebics_sftp_configurations
 end
